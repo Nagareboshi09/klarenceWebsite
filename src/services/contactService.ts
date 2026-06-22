@@ -1,17 +1,4 @@
-
-import { 
-  collection, 
-  addDoc, 
-  getDocs, 
-  doc, 
-  updateDoc, 
-  deleteDoc, 
-  query, 
-  orderBy, 
-  serverTimestamp,
-  Timestamp 
-} from 'firebase/firestore';
-import { db } from '@/firebase/config';
+// src/services/contactService.ts
 
 export interface ContactMessage {
   id: string;
@@ -26,38 +13,28 @@ export interface ContactMessage {
 
 export type ContactMessageInsert = Omit<ContactMessage, 'id' | 'created_at' | 'is_read'>;
 
-const COLLECTION_NAME = 'contact_messages';
+// In-memory storage (messages will reset on page refresh)
+let messages: ContactMessage[] = [];
+let idCounter = 0;
+
+// Helper to generate unique ID
+const generateId = () => {
+  idCounter++;
+  return `msg_${Date.now()}_${idCounter}`;
+};
 
 export const contactService = {
   async getAllMessages(): Promise<{ data: ContactMessage[] | null; error: Error | null }> {
     try {
       console.log("=== FETCHING ALL MESSAGES ===");
-      console.log("Collection name:", COLLECTION_NAME);
-      console.log("Database instance:", db);
+      console.log("Messages count:", messages.length);
       
-      const q = query(collection(db, COLLECTION_NAME), orderBy('created_at', 'desc'));
-      const querySnapshot = await getDocs(q);
+      // Sort by created_at descending
+      const sortedMessages = [...messages].sort((a, b) => 
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
       
-      console.log("Query snapshot size:", querySnapshot.size);
-      
-      const messages: ContactMessage[] = querySnapshot.docs.map(doc => {
-        const data = doc.data();
-        return {
-          id: doc.id,
-          name: data.name,
-          email: data.email,
-          subject: data.subject,
-          message: data.message,
-          user_id: data.user_id || null,
-          created_at: data.created_at instanceof Timestamp 
-            ? data.created_at.toDate().toISOString() 
-            : data.created_at,
-          is_read: data.is_read || false
-        } as ContactMessage;
-      });
-
-      console.log("✅ Successfully fetched messages:", messages.length);
-      return { data: messages, error: null };
+      return { data: sortedMessages, error: null };
     } catch (error) {
       console.error('❌ Error fetching messages:', error);
       return { data: null, error: error as Error };
@@ -67,39 +44,22 @@ export const contactService = {
   async insertMessage(message: ContactMessageInsert): Promise<{ data: ContactMessage | null; error: Error | null }> {
     try {
       console.log("=== INSERTING MESSAGE ===");
-      console.log("Collection name:", COLLECTION_NAME);
-      console.log("Database instance:", db);
       console.log("Message data:", message);
       
-      // Test if we can access the collection
-      console.log("Testing collection access...");
-      const testCollection = collection(db, COLLECTION_NAME);
-      console.log("Collection reference created:", testCollection);
-      
-      console.log("Adding document to Firestore...");
-      const docRef = await addDoc(testCollection, {
-        ...message,
-        created_at: serverTimestamp(),
-        is_read: false
-      });
-      
-      console.log("✅ Document added successfully with ID:", docRef.id);
-
       const newMessage: ContactMessage = {
         ...message,
-        id: docRef.id,
+        id: generateId(),
         created_at: new Date().toISOString(),
         is_read: false
       };
-
-      console.log("✅ Message insert completed successfully");
+      
+      messages.push(newMessage);
+      console.log("✅ Message inserted successfully:", newMessage.id);
+      console.log("Total messages:", messages.length);
+      
       return { data: newMessage, error: null };
     } catch (error) {
-      console.error('❌ Error inserting message:');
-      console.error('Error object:', error);
-      console.error('Error message:', (error as Error).message);
-      console.error('Error code:', (error as any).code);
-      console.error('Error stack:', (error as Error).stack);
+      console.error('❌ Error inserting message:', error);
       return { data: null, error: error as Error };
     }
   },
@@ -109,26 +69,15 @@ export const contactService = {
       console.log("=== MARKING MESSAGE AS READ ===");
       console.log("Message ID:", id);
       
-      const messageRef = doc(db, COLLECTION_NAME, id);
-      await updateDoc(messageRef, {
-        is_read: true
-      });
-
+      const messageIndex = messages.findIndex(msg => msg.id === id);
+      if (messageIndex === -1) {
+        throw new Error(`Message with ID ${id} not found`);
+      }
+      
+      messages[messageIndex].is_read = true;
       console.log("✅ Message marked as read successfully");
-
-      // Return a placeholder message since we don't fetch the updated document
-      const updatedMessage: ContactMessage = {
-        id,
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        user_id: null,
-        created_at: new Date().toISOString(),
-        is_read: true
-      };
-
-      return { data: updatedMessage, error: null };
+      
+      return { data: messages[messageIndex], error: null };
     } catch (error) {
       console.error('❌ Error marking message as read:', error);
       return { data: null, error: error as Error };
@@ -140,7 +89,12 @@ export const contactService = {
       console.log("=== DELETING MESSAGE ===");
       console.log("Message ID:", id);
       
-      await deleteDoc(doc(db, COLLECTION_NAME, id));
+      const initialLength = messages.length;
+      messages = messages.filter(msg => msg.id !== id);
+      
+      if (messages.length === initialLength) {
+        throw new Error(`Message with ID ${id} not found`);
+      }
       
       console.log("✅ Message deleted successfully");
       return { error: null };
@@ -148,5 +102,14 @@ export const contactService = {
       console.error('❌ Error deleting message:', error);
       return { error: error as Error };
     }
+  },
+  
+  // Optional: Clear all messages (for testing)
+  async clearAllMessages(): Promise<void> {
+    messages = [];
+    idCounter = 0;
+    console.log("All messages cleared");
   }
 };
+
+export default contactService;
