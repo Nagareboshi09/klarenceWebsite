@@ -41,7 +41,7 @@ const Navbar = () => {
       y: 0,
       transition: { duration: 0.3, ease: "easeInOut" },
     },
-  };
+  } as const;
 
   const linkVariants = {
     hidden: { opacity: 0, y: -5 },
@@ -63,7 +63,7 @@ const Navbar = () => {
       x: 0,
       transition: { duration: 0.3, ease: "easeInOut" },
     },
-  };
+  } as const;
 
   const bgClass = theme === "dark" 
     ? (isScrolled ? "py-3 bg-brand-dark/90 backdrop-blur-md shadow-md" : "py-5") 
@@ -85,7 +85,7 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              UG.
+              Klarence
             </motion.span>
           </NavLink>
 

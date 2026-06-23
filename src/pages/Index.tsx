@@ -12,7 +12,7 @@ const Index = () => {
   }, []);
 
   const featuredProjects = [
-    {
+   /* {
       title: "Income Tax Fraud Detection",
       description: "A system to detect fraudulent activities in income tax filings using AI and machine learning.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
@@ -35,7 +35,7 @@ const Index = () => {
       tags: ["Python", "ML", "Data Science"],
       link: "/projects",
       code: "https://github.com/oxBinaryBrain/CC-Fraud-Detection"
-    },
+    }, */
   ];
 
   const techStack = [
@@ -60,7 +60,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 mb-4">
+            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-[#E0927B]/10 text-[#E0927B] mb-4">
               About Me
             </span>
             <h2 className="text-4xl font-bold mb-6">Who I Am</h2>
@@ -77,8 +77,8 @@ const Index = () => {
               viewport={{ once: true }}
               className="glass-panel p-8 rounded-lg"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-teal-500/10 rounded-lg mb-6 mx-auto">
-                <Code className="w-8 h-8 text-teal-400" />
+              <div className="flex items-center justify-center w-16 h-16 bg-[#E0927B]/10 rounded-lg mb-6 mx-auto">
+                <Code className="w-8 h-8 text-[#E0927B]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">
                 Web Development
@@ -95,8 +95,8 @@ const Index = () => {
               viewport={{ once: true }}
               className="glass-panel p-8 rounded-lg"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-teal-500/10 rounded-lg mb-6 mx-auto">
-                <GraduationCap className="w-8 h-8 text-teal-400" />
+              <div className="flex items-center justify-center w-16 h-16 bg-[#E0927B]/10 rounded-lg mb-6 mx-auto">
+                <GraduationCap className="w-8 h-8 text-[#E0927B]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">
                 Information technology
@@ -113,8 +113,8 @@ const Index = () => {
               viewport={{ once: true }}
               className="glass-panel p-8 rounded-lg"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-teal-500/10 rounded-lg mb-6 mx-auto">
-                <Briefcase className="w-8 h-8 text-teal-400" />
+              <div className="flex items-center justify-center w-16 h-16 bg-[#E0927B]/10 rounded-lg mb-6 mx-auto">
+                <Briefcase className="w-8 h-8 text-[#E0927B]" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">
                 AI & Machine Learning
@@ -134,7 +134,7 @@ const Index = () => {
           >
             <Link
               to="/about"
-              className="inline-flex items-center px-6 py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center px-6 py-3 bg-[#E0927B] text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
             >
               More About Me
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -153,7 +153,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 mb-4">
+            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-[#E0927B]/10 text-[#E0927B] mb-4">
               Skills
             </span>
             <h2 className="text-4xl font-bold mb-6">Tech Stack</h2>
@@ -178,7 +178,7 @@ const Index = () => {
                 </div>
                 <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
                   <motion.div
-                    className="h-full bg-teal-500"
+                    className="h-full bg-[#E0927B]"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${tech.proficiency}%` }}
                     transition={{ duration: 1, delay: 0.3 }}
@@ -201,7 +201,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 mb-4">
+            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-[#E0927B]/10 text-[#E0927B] mb-4">
               Portfolio
             </span>
             <h2 className="text-4xl font-bold mb-6">Featured Projects</h2>
@@ -238,10 +238,10 @@ const Index = () => {
                     ))}
                   </div>
                   <div className="flex justify-between">
-                    <Link
-                      to={project.link}
-                      className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors"
-                    >
+                      <Link
+                        to={project.link}
+                        className="inline-flex items-center text-[#E0927B] hover:text-[#E0927B] transition-colors"
+                      >
                       View Details
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -269,7 +269,7 @@ const Index = () => {
           >
             <Link
               to="/projects"
-              className="inline-flex items-center px-6 py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center px-6 py-3 bg-[#E0927B] text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
             >
               View All Projects
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -288,8 +288,8 @@ const Index = () => {
             viewport={{ once: true }}
             className="glass-panel p-12 rounded-lg max-w-4xl mx-auto text-center"
           >
-            <div className="flex items-center justify-center w-16 h-16 bg-teal-500/10 rounded-full mb-6 mx-auto">
-              <Star className="w-8 h-8 text-teal-400" />
+            <div className="flex items-center justify-center w-16 h-16 bg-[#E0927B]/10 rounded-full mb-6 mx-auto">
+              <Star className="w-8 h-8 text-[#E0927B]" />
             </div>
             <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
@@ -298,7 +298,7 @@ const Index = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-teal-500 text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center px-8 py-4 bg-[#E0927B] text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
             >
               Get in Touch
               <ArrowRight className="ml-2 h-4 w-4" />

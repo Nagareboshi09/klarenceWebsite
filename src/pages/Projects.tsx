@@ -12,19 +12,30 @@ import {
   Search,
   Code,
   Brain,
-  BarChart
+  BarChart,
+  ArrowUpDown
 } from "lucide-react";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  code: string;
+  category: string;
+}
 
 const Projects = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [filter, setFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortAscending, setSortAscending] = useState(true);
 
-  const projects = [
-    {
+  const projects: Project[] = [
+     {
       id: 1,
       title: "Income Tax Fraud Detection",
       description: "Developed a system to detect fraudulent activities in income tax filings using AI and machine learning techniques. Implemented data preprocessing, feature engineering, and model training.",
@@ -95,8 +106,32 @@ const Projects = () => {
       tags: ["C", "IoT", "NArdiuno"],
       code: "https://github.com/oxBinaryBrain/Ardiuno",
       category: "iot"
-    }
+    } 
   ];
+
+  const quickSort = (arr: Project[], compareFn: (a: Project, b: Project) => number): Project[] => {
+    if (arr.length <= 1) {
+      return arr;
+    }
+
+    const pivot = arr[Math.floor(arr.length / 2)];
+    const left: Project[] = [];
+    const middle: Project[] = [];
+    const right: Project[] = [];
+
+    for (const item of arr) {
+      const comparison = compareFn(item, pivot);
+      if (comparison < 0) {
+        left.push(item);
+      } else if (comparison > 0) {
+        right.push(item);
+      } else {
+        middle.push(item);
+      }
+    }
+
+    return [...quickSort(left, compareFn), ...middle, ...quickSort(right, compareFn)];
+  };
 
   const getIcon = (category: string) => {
     switch (category) {
@@ -117,21 +152,14 @@ const Projects = () => {
     }
   };
 
-  const filteredProjects = projects.filter(project => {
-    const matchesFilter = filter === "all" || project.category === filter;
-    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    return matchesFilter && matchesSearch;
-  });
-
-  const categories = [
-    { id: "all", name: "All Projects" },
-    { id: "web", name: "Web Development" },
-    { id: "ai", name: "AI & ML" },
-    { id: "blockchain", name: "Blockchain" },
-    { id: "iot", name: "IoT" }
-  ];
+  const filteredProjects = quickSort(
+    projects.filter(project => 
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+    ),
+    (a, b) => sortAscending ? a.title.localeCompare(b.title) : b.title.localeCompare(a.title)
+  );
 
   return (
     <Layout>
@@ -165,29 +193,6 @@ const Projects = () => {
             className="mb-12"
           >
             <div className="flex flex-col md:flex-row gap-6 items-center justify-between glass-panel p-6 rounded-lg">
-              {/* Category Filter */}
-              <div className="flex items-center">
-                <Filter className="mr-2 h-5 w-5 text-muted-foreground" />
-                <span className="mr-4 text-sm font-medium">Filter:</span>
-                <div className="flex flex-wrap gap-2">
-                  {categories.map(category => (
-                    <motion.button
-                      key={category.id}
-                      onClick={() => setFilter(category.id)}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
-                        filter === category.id 
-                          ? "bg-brand-purple text-white" 
-                          : "bg-secondary hover:bg-secondary/80 text-muted-foreground"
-                      }`}
-                    >
-                      {category.name}
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-
               {/* Search */}
               <div className="relative w-full md:w-64">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -202,6 +207,17 @@ const Projects = () => {
                   whileFocus={{ boxShadow: "0 0 0 3px rgba(155, 135, 245, 0.3)" }}
                 />
               </div>
+
+              {/* Sort Button */}
+              <motion.button
+                onClick={() => setSortAscending(!sortAscending)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-secondary/80 text-muted-foreground rounded-lg text-sm font-medium transition-colors"
+              >
+                <ArrowUpDown className="w-4 h-4" />
+                <span>Sort by Name {sortAscending ? '(A-Z)' : '(Z-A)'}</span>
+              </motion.button>
             </div>
           </motion.div>
 
@@ -224,20 +240,11 @@ const Projects = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-16 glass-panel rounded-lg"
+                className="col-span-1 md:col-span-2 lg:col-span-3 flex items-center justify-center"
               >
-                <p className="text-xl text-muted-foreground">No projects found matching your criteria.</p>
-                <motion.button
-                  onClick={() => {
-                    setFilter("all");
-                    setSearchTerm("");
-                  }}
-                  whileHover={{ scale: 1.05, backgroundColor: "#8B5CF6" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="mt-4 inline-flex items-center px-4 py-2 bg-brand-purple text-white rounded-lg text-sm font-medium hover:bg-opacity-90 transition-all"
-                >
-                  Clear Filters
-                </motion.button>
+                <div className="text-center py-16 px-8 glass-panel rounded-lg max-w-md w-full">
+                  <p className="text-xl text-muted-foreground">Currently in progress</p>
+                </div>
               </motion.div>
             )}
           </div>

@@ -291,7 +291,7 @@ const HeroSection = () => {
         <motion.div 
           className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center"
           animate={{
-            borderColor: ["#94a3b8", "#14b8a6", "#94a3b8"],
+            borderColor: ["#94a3b8", "#D46949", "#94a3b8"],
           }}
           transition={{
             duration: 2,
@@ -303,7 +303,7 @@ const HeroSection = () => {
             className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2"
             animate={{ 
               y: [0, 12, 0],
-              backgroundColor: ["#94a3b8", "#14b8a6", "#94a3b8"],
+              backgroundColor: ["#94a3b8", "#D46949", "#94a3b8"],
             }}
             transition={{ 
               duration: 1.5, 

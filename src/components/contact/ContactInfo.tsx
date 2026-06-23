@@ -27,7 +27,7 @@ const ContactInfo = () => {
     {
       icon: <Linkedin className="h-5 w-5" />,
       name: "LinkedIn",
-      url: "www.linkedin.com/in/paul-klarence-de-guzman-3a9075148",
+      url: "https://www.linkedin.com/in/paul-klarence-de-guzman-3a9075148/",
     },
     {
       icon: <Twitter className="h-5 w-5" />,
