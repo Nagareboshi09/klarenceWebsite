@@ -39,10 +39,10 @@ const Index = () => {
   ];
 
   const techStack = [
-    { name: "C#", proficiency: 80 },
+    { name: "HTML", proficiency: 90 },
     { name: "JavaScript", proficiency: 90 },
-    { name: "Java", proficiency: 85 },
-    { name: "Python", proficiency: 75 },
+    { name: "CSS", proficiency: 90 },
+    { name: "Java", proficiency: 75 },
     { name: "PHP", proficiency: 50 },
   ];
 
