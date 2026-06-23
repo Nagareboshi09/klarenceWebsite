@@ -209,7 +209,7 @@ const HeroSection = () => {
                 <SkillCard 
                   icon={Code}
                   title="Python"
-                  description="Expert level proficiency"
+                  description="Learned python in 2nd year College"
                   className="col-span-3 row-span-2"
                 />
                 
@@ -223,7 +223,7 @@ const HeroSection = () => {
                 <SkillCard 
                   icon={Globe}
                   title="Java"
-                  description="UI Library"
+                  description="Computer programming 1 and 2"
                   className="col-span-2 row-span-2"
                 />
                 
@@ -237,7 +237,7 @@ const HeroSection = () => {
                 <SkillCard 
                   icon={Terminal}
                   title="C#"
-                  description="Systems programming"
+                  description="Event Driven programming"
                   className="col-span-2 row-span-2"
                 />
                 
