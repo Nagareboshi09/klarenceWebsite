@@ -26,7 +26,7 @@ const ProjectCard = ({ title, description, image, tags, code, category, icon: Ic
       className="glass-panel rounded-lg overflow-hidden flex flex-col"
     >
       <div className="relative h-48 overflow-hidden">
-        <div className="absolute top-3 left-3 bg-secondary/80 backdrop-blur-sm px-3 py-1 rounded-full flex items-center text-xs font-medium z-10">
+        <div className="absolute top-3 left-3 bg-secondary/80 px-3 py-1 rounded-full flex items-center text-xs font-medium z-10">
           <Icon className="w-5 h-5" />
           <span className="ml-1.5 capitalize">{getCategoryName(category)}</span>
         </div>

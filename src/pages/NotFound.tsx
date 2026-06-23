@@ -6,8 +6,13 @@ import { motion } from "framer-motion";
 import { Home, ArrowLeft, Info } from "lucide-react";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 
+interface LocationState {
+  from?: string;
+}
+
 const NotFound = () => {
   const location = useLocation();
+  const state = location.state as LocationState | null;
 
   useEffect(() => {
     console.error(
@@ -17,7 +22,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-brand-dark p-4">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="glass-panel p-8 md:p-12 rounded-lg text-center max-w-md w-full">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -53,7 +58,7 @@ const NotFound = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                to={(location.state as any)?.from || "/"}
+                to={state?.from || "/"}
                 className="inline-flex items-center bg-secondary text-foreground px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-all"
               >
                 <ArrowLeft className="mr-2 h-5 w-5" />

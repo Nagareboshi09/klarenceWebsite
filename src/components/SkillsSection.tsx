@@ -105,10 +105,10 @@ const SkillsSection = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.5 }}
-      className="glass-panel p-8 rounded-xl backdrop-blur-md border border-white/10"
+      className="glass-panel p-8 rounded-xl border border-border"
     >
       <div className="flex items-center justify-between mb-8">
-        <h3 className="text-2xl font-semibold flex items-center text-white">
+        <h3 className="text-2xl font-semibold flex items-center text-foreground">
           <Code className="w-6 h-6 mr-3 text-brand-purple" />
           Technical Skills
         </h3>
@@ -122,10 +122,10 @@ const SkillsSection = () => {
             onClick={() => setActiveFilter(category)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm border ${
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
               activeFilter === category
                 ? "bg-brand-purple text-white border-brand-purple/50"
-                : "bg-gray-800/30 text-gray-300 border-white/10 hover:bg-gray-800/50 hover:border-brand-purple/30"
+                : "bg-secondary text-secondary-foreground border-border hover:bg-muted"
             }`}
           >
             {category}
@@ -160,7 +160,7 @@ const SkillsSection = () => {
             className="flex flex-col items-center group cursor-pointer"
           >
             <motion.div
-              className={`relative w-16 h-16 ${skill.bgColor} rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/10 group-hover:border-brand-purple/50 transition-all duration-300`}
+              className={`relative w-16 h-16 ${skill.bgColor} rounded-2xl flex items-center justify-center border border-border group-hover:border-brand-purple/50 transition-all duration-300`}
               whileHover={{ 
                 boxShadow: "0 10px 30px -5px rgba(155, 135, 245, 0.4)",
               }}
@@ -179,7 +179,7 @@ const SkillsSection = () => {
             </motion.div>
             
             <motion.span
-              className="text-xs font-medium mt-3 text-center text-gray-300 group-hover:text-white transition-colors max-w-20"
+              className="text-xs font-medium mt-3 text-center text-muted-foreground group-hover:text-foreground transition-colors max-w-20"
               whileHover={{ scale: 1.05 }}
             >
               {skill.name}
@@ -190,7 +190,7 @@ const SkillsSection = () => {
 
       {filteredSkills.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-400">No skills found in this category.</p>
+          <p className="text-muted-foreground">No skills found in this category.</p>
         </div>
       )}
     </motion.div>

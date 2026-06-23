@@ -22,7 +22,7 @@ export const Layout = ({ children }: LayoutProps) => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-brand-dark relative">
+    <div className="flex flex-col min-h-screen bg-background relative">
       {/* Global Particle Background - Always present */}
       <div className="fixed inset-0 z-0">
         <ParticleBackground />
@@ -61,7 +61,7 @@ export const Layout = ({ children }: LayoutProps) => {
         )}
       </main>
       
-      <footer className="w-full py-8 border-t border-muted relative z-10 backdrop-blur-md bg-black/20">
+      <footer className="w-full py-8 border-t border-muted relative z-10 bg-background/80">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">

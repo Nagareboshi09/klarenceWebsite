@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,9 +66,9 @@ const Navbar = () => {
     },
   } as const;
 
-  const bgClass = theme === "dark" 
-    ? (isScrolled ? "py-3 bg-brand-dark/90 backdrop-blur-md shadow-md" : "py-5") 
-    : (isScrolled ? "py-3 bg-white/90 backdrop-blur-md shadow-md" : "py-5");
+  const bgClass = isScrolled 
+    ? "py-3 bg-background/90 shadow-md" 
+    : "py-5";
 
   return (
     <header>
@@ -111,6 +112,11 @@ const Navbar = () => {
             ))}
           </div>
 
+          {/* Theme Toggle */}
+          <div className="hidden lg:block">
+            <ThemeToggle />
+          </div>
+
           {/* Mobile Navigation Toggle */}
           <div className="lg:hidden">
             <motion.button
@@ -126,7 +132,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         <motion.div
-          className="fixed inset-y-0 right-0 w-[280px] bg-secondary/95 backdrop-blur-lg shadow-xl lg:hidden"
+          className="fixed inset-y-0 right-0 w-[280px] bg-secondary/95 shadow-xl lg:hidden"
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           variants={mobileMenuVariants}

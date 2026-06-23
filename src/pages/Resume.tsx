@@ -156,13 +156,13 @@ const Resume = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="glass-panel p-6 rounded-lg flex items-start backdrop-blur-md border border-white/10"
+              className="glass-panel p-6 rounded-lg flex items-start border border-border"
             >
               <div className="mr-4 bg-brand-purple/10 p-3 rounded-full">
                 {highlight.icon}
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-1 text-white">{highlight.title}</h3>
+                <h3 className="text-xl font-semibold mb-1 text-foreground">{highlight.title}</h3>
                 <p className="text-muted-foreground">{highlight.description}</p>
               </div>
             </motion.div>
@@ -175,9 +175,9 @@ const Resume = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.8 }}
-          className="glass-panel p-6 rounded-lg backdrop-blur-md border border-white/10"
+          className="glass-panel p-6 rounded-lg border border-border"
         >
-          <h3 className="text-xl font-semibold mb-6 text-white">Soft Skills</h3>
+          <h3 className="text-xl font-semibold mb-6 text-foreground">Soft Skills</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {softSkills.map((item, index) => (
               <div key={index} className="bg-secondary/50 p-4 rounded-lg">
@@ -250,7 +250,7 @@ const Resume = () => {
             transition={{ duration: 0.4 }}
             className="glass-panel p-8 rounded-lg text-center"
           >
-            <h3 className="text-xl font-semibold text-white mb-2">Currently in progress</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-2">Currently in progress</h3>
             <p className="text-muted-foreground">Projects are being worked on and will be added soon.</p>
           </motion.div>
         ) : (
@@ -316,10 +316,10 @@ const Resume = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-brand-purple/10 text-brand-purple mb-4 backdrop-blur-sm border border-brand-purple/20">
+            <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-brand-purple/10 text-brand-purple mb-4 border border-brand-purple/20">
               Resume
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               <AnimatedText text="Professional Experience" once />
             </h1>
             <div className="max-w-3xl mx-auto">
@@ -351,7 +351,7 @@ const Resume = () => {
                   onClick={() => setActiveTab(tab.id)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors backdrop-blur-sm border ${
+                  className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors border ${
                     activeTab === tab.id
                       ? "bg-brand-purple text-white border-brand-purple/50"
                       : "bg-secondary/20 text-muted-foreground hover:bg-secondary/40 border-white/10"
