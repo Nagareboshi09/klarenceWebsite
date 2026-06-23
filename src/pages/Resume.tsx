@@ -6,9 +6,7 @@ import PrintableResume from "@/components/PrintableResume";
 import SkillsSection from "@/components/SkillsSection";
 import { 
   Briefcase, 
-  GraduationCap, 
   Code, 
-  Award,
   CheckCircle2,
   Brain,
   Cpu,
@@ -28,66 +26,33 @@ const Resume = () => {
 
   const [activeTab, setActiveTab] = useState("skills");
 
-  const education = [
-    {
-      institution: "Presidency University, Bengaluru",
-      degree: "Bachelor of Technology (B.Tech)",
-      field: "Computer Science & Engineering (AI & ML)",
-      duration: "2021 - 2025",
-      gpa: "3.0/4.0",
-      location: "Bengaluru, India",
-    },
-    {
-      institution: "MES Kishora Kendra, Bengaluru",
-      degree: "Pre-University College",
-      field: "Science Stream",
-      duration: "2019 - 2021",
-      gpa: "85%",
-      location: "Bengaluru, India",
-    },
-  ];
-
   const experience = [
     {
-      position: "Freelance Developer",
-      company: "Self-employed",
-      duration: "January 2023 - Present",
-      description: "Working as a freelance developer on various projects, specializing in web development and AI solutions.",
+      position: "Lead Mobile Developer Intern",
+      company: "Globe International Distributor Center, Inc",
+      duration: "September - November 2025",
+      description: "Programmed a large-scale inventory encoding while designing a responsive, modern UI to ensure the application remained user-friendly for warehouse personnel.",
       responsibilities: [
-        "Developed full-stack web applications for clients using React, Node.js, and MongoDB",
-        "Created AI-powered solutions for data analysis and automation",
-        "Managed project timelines and client communication",
-        "Integrated AI tools into development workflows for improved efficiency"
+        "Enables warehouse personnel to view, update, and manage inventory counts, starting from a physical paper-based system to a digital mobile format.",
+        "Implemented advanced functionalities including a dark mode UI, permission-based storage access, and an automated Excel (.xlsx) export system using Share Plus for seamless inventory data sharing.",
+        "Includes a list of orders for inventory that can be edited and filtered by batch to streamline the selection process of users"
       ]
     },
     {
-      position: "Web Developer Intern",
-      company: "SkillCraft Technologies",
-      duration: "November 2024 - December 2024",
-      description: "Developed and maintained web applications using React.js and Node.js. Collaborated with senior developers to implement new features and fix bugs.",
+      position: "Work Immersion QA",
+      company: "CREOTEC Philippines Inc.",
+      duration: "April - March 2020",
+      //description: "Developed and maintained web applications using React.js and Node.js. Collaborated with senior developers to implement new features and fix bugs.",
       responsibilities: [
-        "Developed responsive front-end interfaces using React.js",
-        "Implemented RESTful APIs using Node.js and Express",
-        "Participated in code reviews and team meetings",
-        "Optimized applications for maximum speed and scalability"
+        "Created a team plan to meet daily quotas, and coordinated with the team leader to foster a productive team environment.",
+        "Participated in Quality Assurance production",
+        "Analyzed the quality of the chips, implemented improvements, and completed daily quotas"
       ]
-    },
-    {
-      position: "Open Source Contributor",
-      company: "GitHub Community",
-      duration: "January 2022 - Present",
-      description: "Actively contributed to various open-source projects, focusing on web development and machine learning libraries.",
-      responsibilities: [
-        "Fixed bugs and implemented new features in popular repositories",
-        "Collaborated with developers worldwide through pull requests",
-        "Improved documentation for better user experience",
-        "Participated in code reviews and discussions"
-      ]
-    },
+    }
   ];
 
   const projects = [
-    {
+   /* {
       title: "Income Tax Fraud Detection",
       description: "Developed an AI-powered system to detect fraudulent activities in income tax filings using machine learning algorithms and data pattern analysis.",
       technologies: ["Python", "Machine Learning", "AI", "Data Analysis", "TensorFlow"],
@@ -146,45 +111,7 @@ const Resume = () => {
         "Implemented BERT embeddings for improved contextual understanding",
         "Published package with documentation for community use"
       ]
-    },
-  ];
-
-  const certifications = [
-    {
-      name: "API Prototyping Learning Path",
-      issuer: "Postman",
-      date: "December 2024",
-      skills: "API Prototyping, API Testing, API Documentation",
-      credential: "PST-APL-2024"
-    },
-    {
-      name: "Career Essentials in Generative AI",
-      issuer: "Microsoft and LinkedIn",
-      date: "November 2024",
-      skills: "Generative AI, Prompt Engineering, LLM Applications",
-      credential: "MSLI-GAI-2024"
-    },
-    {
-      name: "Learning Microsoft Power BI",
-      issuer: "Infosys Springboard",
-      date: "November 2024",
-      skills: "Microsoft Power BI, Data Visualization, Business Intelligence",
-      credential: "ISB-PBI-2024"
-    },
-    {
-      name: "Neural Networks and Deep Learning",
-      issuer: "Great Learning",
-      date: "January 2024",
-      skills: "Neural Networks, Deep Learning, AI Architecture",
-      credential: "GL-NNDL-2024"
-    },
-    {
-      name: "Real Life Machine Learning and Data Science Projects",
-      issuer: "Udemy",
-      date: "November 2022",
-      skills: "Machine Learning, Data Science, Practical Implementation",
-      credential: "UC-e1c70903-b810-4b6b-8749-eebd3345715"
-    },
+    }, */
   ];
 
   const softSkills = [
@@ -198,9 +125,9 @@ const Resume = () => {
 
   const resumeHighlights = [
     { 
-      title: "AI & ML Specialist", 
-      description: "Specialized in machine learning algorithms and AI applications with practical implementation experience",
-      icon: <Brain className="h-8 w-8 text-brand-purple" />
+      title: "Mobile Developer", 
+      description: "Specialized in Flutter, Android Studio, and Dart",
+      icon: <Code className="h-8 w-8 text-brand-purple" />
     },
     { 
       title: "Full-Stack Developer", 
@@ -208,8 +135,8 @@ const Resume = () => {
       icon: <Code className="h-8 w-8 text-brand-purple" />
     },
     { 
-      title: "Web Developer", 
-      description: "Experienced in building web applications using react framework and plain HTML and CSS",
+      title: "Cyber Security", 
+      description: "Has knowledge in Data privacy and Data Security",
       icon: <Cpu className="h-8 w-8 text-brand-purple" />
     },
     { 
@@ -261,98 +188,6 @@ const Resume = () => {
           </div>
         </motion.div>
       </div>
-    ),
-    education: (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="space-y-6"
-      >
-        {education.map((edu, index) => (
-          <motion.div
-            key={edu.institution}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="glass-panel p-6 rounded-lg"
-          >
-            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
-              <div className="flex-1">
-                <div className="flex items-start">
-                  <div className="bg-brand-purple/10 p-2 rounded-full mr-4 hidden md:block">
-                    <GraduationCap className="h-6 w-6 text-brand-purple" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold">{edu.degree}</h3>
-                    <div className="text-lg mt-1">{edu.institution}</div>
-                    <div className="text-muted-foreground mt-1">{edu.field}</div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col items-start md:items-end text-right">
-                <div className="px-3 py-1 rounded-full text-sm bg-brand-purple/10 text-brand-purple">
-                  {edu.gpa}
-                </div>
-                <div className="text-sm text-muted-foreground mt-2">{edu.duration}</div>
-                <div className="text-sm text-muted-foreground mt-1">{edu.location}</div>
-              </div>
-            </div>
-            <div className="mt-4 pl-4 border-l-2 border-brand-purple/30">
-              <h4 className="font-medium mb-2">Key Courses:</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {edu.institution.includes("Presidency") ? (
-                  <>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Artificial Intelligence & Machine Learning
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Data Structures & Algorithms
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Computer Vision Systems
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Web Development
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Database Management Systems
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Deep Learning
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Physics
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Chemistry
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Mathematics
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Computer Science
-                    </li>
-                  </>
-                )}
-              </ul>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
     ),
     experience: (
       <motion.div
@@ -408,95 +243,65 @@ const Resume = () => {
         transition={{ duration: 0.4 }}
         className="space-y-6"
       >
-        {projects.map((project, index) => (
+        {projects.length === 0 ? (
           <motion.div
-            key={project.title}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="glass-panel p-6 rounded-lg"
+            transition={{ duration: 0.4 }}
+            className="glass-panel p-8 rounded-lg text-center"
           >
-            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2 items-center">
-                <span className="text-xs py-1 px-3 bg-brand-purple/10 text-brand-purple rounded-full">
-                  {project.type}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  {project.duration}
-                </span>
-              </div>
-            </div>
-            <p className="text-muted-foreground mb-4">{project.description}</p>
-            
-            <div className="mb-4">
-              <h4 className="font-medium mb-2">Key Accomplishments:</h4>
-              <ul className="space-y-2">
-                {project.accomplishments.map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-purple mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="flex flex-wrap gap-2 mt-4">
-              {project.technologies.map((tech) => (
-                <span 
-                  key={tech} 
-                  className="text-xs py-1 px-3 bg-secondary rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <h3 className="text-xl font-semibold text-white mb-2">Currently in progress</h3>
+            <p className="text-muted-foreground">Projects are being worked on and will be added soon.</p>
           </motion.div>
-        ))}
-      </motion.div>
-    ),
-    certifications: (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6"
-      >
-        {certifications.map((cert, index) => (
-          <motion.div
-            key={cert.name}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="glass-panel p-6 rounded-lg"
-          >
-            <div className="flex items-start">
-              <div className="bg-brand-purple/10 p-2 rounded-full mr-4 flex-shrink-0">
-                <Award className="h-5 w-5 text-brand-purple" />
-              </div>
-              <div>
-                <h3 className="font-semibold">{cert.name}</h3>
-                <div className="text-sm text-muted-foreground mb-2">
-                  {cert.issuer} • {cert.date}
+        ) : (
+          projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="glass-panel p-6 rounded-lg"
+            >
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-4">
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {cert.skills.split(', ').map((skill) => (
-                    <span key={skill} className="text-xs px-2 py-1 bg-secondary inline-block rounded-full">
-                      {skill}
-                    </span>
+                <div className="flex flex-wrap gap-2 items-center">
+                  <span className="text-xs py-1 px-3 bg-brand-purple/10 text-brand-purple rounded-full">
+                    {project.type}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {project.duration}
+                  </span>
+                </div>
+              </div>
+              <p className="text-muted-foreground mb-4">{project.description}</p>
+              
+              <div className="mb-4">
+                <h4 className="font-medium mb-2">Key Accomplishments:</h4>
+                <ul className="space-y-2">
+                  {project.accomplishments.map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-brand-purple mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </li>
                   ))}
-                </div>
-                {cert.credential && (
-                  <div className="text-xs text-muted-foreground">
-                    Credential ID: {cert.credential}
-                  </div>
-                )}
+                </ul>
               </div>
-            </div>
-          </motion.div>
-        ))}
+              
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.technologies.map((tech) => (
+                  <span 
+                    key={tech} 
+                    className="text-xs py-1 px-3 bg-secondary rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))
+        )}
       </motion.div>
     ),
   };
@@ -538,10 +343,8 @@ const Resume = () => {
             <div className="flex flex-wrap justify-center gap-4">
               {[
                 { id: "skills", icon: <Code className="h-5 w-5" />, label: "Skills" },
-                { id: "education", icon: <GraduationCap className="h-5 w-5" />, label: "Education" },
                 { id: "experience", icon: <Briefcase className="h-5 w-5" />, label: "Experience" },
                 { id: "projects", icon: <Code className="h-5 w-5" />, label: "Projects" },
-                { id: "certifications", icon: <Award className="h-5 w-5" />, label: "Certifications" },
               ].map((tab) => (
                 <motion.button
                   key={tab.id}

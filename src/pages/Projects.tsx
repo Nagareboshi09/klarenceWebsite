@@ -35,7 +35,7 @@ const Projects = () => {
   const [sortAscending, setSortAscending] = useState(true);
 
   const projects: Project[] = [
-     {
+    /* {
       id: 1,
       title: "Income Tax Fraud Detection",
       description: "Developed a system to detect fraudulent activities in income tax filings using AI and machine learning techniques. Implemented data preprocessing, feature engineering, and model training.",
@@ -106,7 +106,7 @@ const Projects = () => {
       tags: ["C", "IoT", "NArdiuno"],
       code: "https://github.com/oxBinaryBrain/Ardiuno",
       category: "iot"
-    } 
+    } */
   ];
 
   const quickSort = (arr: Project[], compareFn: (a: Project, b: Project) => number): Project[] => {
