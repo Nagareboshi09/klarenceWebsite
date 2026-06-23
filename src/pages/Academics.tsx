@@ -15,43 +15,44 @@ const Academics = () => {
   const education = [
     {
       id: 1,
-      institution: "Presidency University, Bengaluru",
-      degree: "Bachelor of Technology (B.Tech)",
-      field: "Computer Science & Engineering (Specialization in AI & ML)",
-      duration: "2021 - Present",
-      location: "Bengaluru, Karnataka",
-      cgpa: "In Progress",
+      institution: "STI College Muñoz-EDSA",
+      degree: "Bachelor of Information Technology",
+      duration: "2022 - 2026",
+      location: "Tango Bldg, Congressional Avenue Corner Edsa Avenue, Ramon Magsasay, Quezon City",
+      gwa: "1.47",
       details: [
-        "Specializing in Artificial Intelligence and Machine Learning",
-        "Key courses include Data Structures, Algorithms, Machine Learning",
-        "Actively participating in research projects related to AI/ML"
+        "Fundamentals of Cyber Security data privacy and security",
+        "Key courses include Data Structures and Algorithms",
+        "Relational Database, Unstructured Database using MySQL and MsSql",
+        "JavaScript Fundamentals, OOP",
+        "SAP/S4HANA and Business 1"
       ]
     },
     {
       id: 2,
-      institution: "MES Kishora Kendra",
-      degree: "Pre-University College",
-      field: "Science Stream",
-      duration: "2019 - 2021",
-      location: "Bengaluru, Karnataka",
-      cgpa: "8.5",
+      institution: "Perpetual Help College of Manila",
+      degree: "Senior High-School",
+      duration: "2018 - 2020",
+      location: "1240 Concepcion St, Sampaloc, Manila, 1008 Metro Manila",
+      gwa: "N/A",
       details: [
-        "Major subjects included Physics, Mathematics, Chemistry, Computer Science",
-        "Highlights: Advanced Mathematics & Computer Science",
+        "Technology Vocational Science",
+        "Learned computer hardware and troubleshooting",
         "Developed strong foundation in scientific principles and programming"
       ]
     },
     {
       id: 3,
-      institution: "Nelamangala, Bengaluru",
-      degree: "Secondary High School",
-      field: "NCERT-based Curriculum",
-      duration: "2012 - 2019",
-      location: "Bengaluru, Karnataka",
-      cgpa: "9.09",
+      institution: "Perpetual Help College of Manila",
+      degree: "High School",
+      duration: "2014 - 2017",
+      location: "1240 Concepcion St, Sampaloc, Manila, 1008 Metro Manila",
+      gwa: "N/A",
       details: [
-        "Strong foundation in Science",
-        "Studied foundations of Mathematics"
+        "Strong foundation in English and Filipino",
+        "Algebra, Geometry, and basic Statistics.",
+        "Philippine History, Asian History, World History, and Economics.",
+        "Music, Arts, Physical Education, and Health (MAPEH), Technology and Livelihood Education (TLE), and Edukasyon sa Pagpapakatao (Values Education)."
       ]
     }
   ];
@@ -59,45 +60,54 @@ const Academics = () => {
   const certifications = [
     {
       id: 1,
-      name: "Python Programming",
-      issuer: "Coursera",
+      name: "Java Fundamentals",
+      issuer: "STI Munoz-EDSA",
       date: "2022",
-      description: "Comprehensive course covering advanced Python concepts and applications."
+      description: "Comprehensive course covering Object Oriented Programming."
     },
     {
       id: 2,
-      name: "Web Development with JavaScript",
-      issuer: "Udemy",
-      date: "2022",
-      description: "In-depth training on building modern web applications using JavaScript."
+      name: "SAP Business 1/ SAP S4/HANA",
+      issuer: "STI Munoz-EDSA",
+      date: "2023 and 2025",
+      description: "In-depth training using SAP applications"
     },
     {
       id: 3,
-      name: "Machine Learning Fundamentals",
-      issuer: "edX",
-      date: "2023",
-      description: "Introduction to machine learning algorithms and their implementation."
+      name: "freeCodeCamp Responsive Web DesignV8",
+      issuer: "freeCodeCamp",
+      date: "2026",
+      description: "Creating a website using semantic elements, promiting accessibility and using typography."
     },
     {
       id: 4,
-      name: "React.js Development",
+      name: "Javascript",
       issuer: "freeCodeCamp",
-      date: "2023",
-      description: "Building interactive user interfaces with React.js framework."
+      date: "2026",
+      description: "Javascript fundamentals, Data structures and algorithm, Trees, Classes, Functional programming, Promises and etc."
+    },
+    {
+      id: 5,
+      name: "Microsoft: Azure AI Fundamentals",
+      issuer: "TESDA",
+      date: "2026",
+      description: "Certified in Azure AI Fundamentals through TESDA’s ICT digital initiative. Validated competency in cloud computing architecture, machine learning anomalies detection, automated feature engineering, and deploying conversational chatbots through Microsoft Azure AI Services."
     }
   ];
 
   const courseHighlights = [
     "Data Structures and Algorithms",
-    "Machine Learning",
-    "Artificial Intelligence",
+    "SAP S4/HANA & Business 1",
+    "System Administration",
     "Database Management Systems",
-    "Computer Networks",
+    "Networking and Hardware",
     "Operating Systems",
-    "Web Technologies",
-    "Software Engineering",
+    "Web Development fundamentals",
+    "Cyber Security data privacy and data security",
     "Cloud Computing",
-    "Blockchain Technology"
+    "Technopreneurship",
+    "Event Driven Programming",
+    "Computer programming 1 and 2"
   ];
 
   return (
@@ -140,10 +150,9 @@ const Academics = () => {
                   key={edu.id}
                   institution={edu.institution}
                   degree={edu.degree}
-                  field={edu.field}
                   duration={edu.duration}
                   location={edu.location}
-                  cgpa={edu.cgpa}
+                  gwa={edu.gwa}
                   details={edu.details}
                   index={index}
                 />

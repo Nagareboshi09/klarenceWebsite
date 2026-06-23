@@ -5,10 +5,9 @@ import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
 interface EducationCardProps {
   institution: string;
   degree: string;
-  field: string;
   duration: string;
   location: string;
-  cgpa: string;
+  gwa: string;
   details: string[];
   index: number;
 }
@@ -16,10 +15,9 @@ interface EducationCardProps {
 const EducationCard = ({ 
   institution, 
   degree, 
-  field, 
   duration, 
   location, 
-  cgpa, 
+  gwa, 
   details,
   index
 }: EducationCardProps) => {
@@ -46,7 +44,6 @@ const EducationCard = ({
         
         <div className="mb-4">
           <div className="font-medium text-lg mb-1">{institution}</div>
-          <p className="text-muted-foreground">{field}</p>
           
           <div className="flex flex-wrap gap-y-2 gap-x-4 mt-2 text-sm text-muted-foreground">
             <div className="flex items-center">
@@ -59,7 +56,7 @@ const EducationCard = ({
             </div>
             <div className="flex items-center">
               <Award className="h-4 w-4 mr-1" />
-              CGPA: {cgpa}
+              GWA: {gwa}
             </div>
           </div>
         </div>
