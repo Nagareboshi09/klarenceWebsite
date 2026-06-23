@@ -137,7 +137,18 @@ const Navbar = () => {
           animate={isOpen ? "open" : "closed"}
           variants={mobileMenuVariants}
         >
-          <div className="flex flex-col h-full pt-20 px-6 pb-6">
+          <div className="flex justify-between items-center p-4">
+            <ThemeToggle />
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+              className="p-2 text-foreground"
+            >
+              <X className="w-6 h-6" />
+            </motion.button>
+          </div>
+          <div className="flex flex-col h-full px-6 pb-6">
             <div className="flex-1 flex flex-col space-y-4">
               {navLinks.map((link, i) => (
                 <NavLink
