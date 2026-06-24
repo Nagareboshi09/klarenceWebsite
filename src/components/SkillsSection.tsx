@@ -165,7 +165,13 @@ const SkillsSection = () => {
                 boxShadow: "0 10px 30px -5px rgba(155, 135, 245, 0.4)",
               }}
             >
-              {getSkillIcon(skill.name).endsWith("-ai") ? (
+              {skill.name === "NetBeans" ? (
+                <img 
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netbeans/netbeans-original.svg" 
+                  alt={skill.name} 
+                  className="w-8 h-8" 
+                />
+              ) : getSkillIcon(skill.name).endsWith("-ai") ? (
                 <Bot className="w-8 h-8" style={{ color: skill.color }} />
               ) : (
                 <i className={`${getSkillIcon(skill.name)} text-3xl`} style={{ color: skill.color }}></i>
