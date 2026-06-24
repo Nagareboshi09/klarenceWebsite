@@ -103,6 +103,7 @@ const Academics = () => {
     "Networking and Hardware",
     "Operating Systems",
     "Web Development fundamentals",
+    "Object Oriented Programming",
     "Cyber Security data privacy and data security",
     "Cloud Computing",
     "Technopreneurship",

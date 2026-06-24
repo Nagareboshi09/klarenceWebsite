@@ -43,7 +43,7 @@ const About = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-lg text-muted-foreground">
-                I'm a Information Technology student passionate about creating innovative solutions through programming and technology.
+                I'm an Information Technology student passionate about creating innovative solutions through programming and technology.
               </p>
             </div>
           </motion.div>

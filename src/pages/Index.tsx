@@ -44,6 +44,7 @@ const Index = () => {
     { name: "CSS", proficiency: 90 },
     { name: "Java", proficiency: 75 },
     { name: "PHP", proficiency: 50 },
+    { name: "React", proficiency: 50 }
   ];
 
   return (
@@ -63,9 +64,9 @@ const Index = () => {
             <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-[#E0927B]/10 text-[#E0927B] mb-4">
               About Me
             </span>
-            <h2 className="text-4xl font-bold mb-6">Who I Am</h2>
+            <h2 className="text-4xl font-bold mb-6">Who Am I</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground">
-              I'm a Information Technology student. Passionate about programming, AI integration, and building innovative web applications.
+              I'm an Information Technology student. Passionate about programming, AI integration, and building innovative web applications.
             </p>
           </motion.div>
 
@@ -188,6 +189,22 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <Link
+              to="/resume"
+              className="inline-flex items-center px-6 py-3 bg-[#E0927B] text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
+            >
+              View More
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
