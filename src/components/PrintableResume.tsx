@@ -37,7 +37,7 @@ const PrintableResume = () => {
                 Resume Preview
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
-                Preview your resume before downloading
+                Preview the resume before downloading
               </p>
             </div>
           </CardContent>
