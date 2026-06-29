@@ -13,7 +13,8 @@ import {
   Code,
   Brain,
   BarChart,
-  ArrowUpDown
+  ArrowUpDown,
+  Smartphone
 } from "lucide-react";
 
 interface Project {
@@ -147,6 +148,8 @@ const Projects = () => {
         return Brain;
       case "data":
         return BarChart;
+      case "mobile":
+        return Smartphone;
       default:
         return Code;
     }
