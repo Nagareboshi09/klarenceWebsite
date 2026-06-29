@@ -36,16 +36,16 @@ const Projects = () => {
   const [sortAscending, setSortAscending] = useState(true);
 
   const projects: Project[] = [
-    /* {
-      id: 1,
-      title: "Income Tax Fraud Detection",
-      description: "Developed a system to detect fraudulent activities in income tax filings using AI and machine learning techniques. Implemented data preprocessing, feature engineering, and model training.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-      tags: ["Python", "Machine Learning", "AI"],
-      code: "https://github.com/oxBinaryBrain/An_Income_Tax_Fraud_Detection_Using_AI-ML",
-      category: "ai"
-    },
     {
+      id: 1,
+      title: "Warehouse Inventory",
+      description: "A cross-platform Flutter application for managing warehouse inventory across multiple branches. Built with Drift for local offline storage, featuring role-based authentication, batch data operations via Excel/CSV, and real-time dashboard analytics.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      tags: ["Flutter", "Dart", "Drift", "bcrypt", "file picker", "share plus", "permission handler"],
+      code: "https://appetize.io/app/b_b7htgjbrj7xz4djo67u363wzbm",
+      category: "mobile"
+    }
+   /*  {
       id: 2,
       title: "Oral Cancer Classification using Neural Networks",
       description: "Developing a machine learning model to detect and classify oral cancer levels from images. It involves data collection, preprocessing, feature extraction, and model evaluation.",
@@ -140,6 +140,8 @@ const Projects = () => {
         return Bot;
       case "web":
         return MonitorSmartphone;
+      case "mobile":
+        return Smartphone;
       case "blockchain":
         return Database;
       case "iot":
@@ -148,8 +150,6 @@ const Projects = () => {
         return Brain;
       case "data":
         return BarChart;
-      case "mobile":
-        return Smartphone;
       default:
         return Code;
     }

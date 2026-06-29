@@ -68,7 +68,7 @@ const ProjectCard = ({ title, description, image, tags, code, category, icon: Ic
             whileTap={{ scale: 0.95 }}
           >
             <Github className="mr-1.5 h-4 w-4" />
-            Source Code
+            View
           </motion.a>
         </div>
       </div>

@@ -52,19 +52,19 @@ const Resume = () => {
   ];
 
   const projects = [
-   /* {
-      title: "Income Tax Fraud Detection",
-      description: "Developed an AI-powered system to detect fraudulent activities in income tax filings using machine learning algorithms and data pattern analysis.",
-      technologies: ["Python", "Machine Learning", "AI", "Data Analysis", "TensorFlow"],
-      duration: "03/2023 - 04/2023",
-      type: "Open-source",
+    {
+      title: "Warehouse Inventory",
+      description: "A cross-platform Flutter application for managing warehouse inventory across multiple branches. Built with Drift for local offline storage, featuring role-based authentication, batch data operations via Excel/CSV, and real-time dashboard analytics.",
+      technologies: ["Flutter", "Dart", "Drift", "bcrypt", "file picker", "share plus", "permission handler"],
+      duration: "10/2025 - 11/2025",
+      type: "Internship",
       accomplishments: [
-        "Created custom algorithms to identify suspicious patterns in tax filings",
-        "Implemented a dashboard to visualize fraud detection metrics",
-        "Achieved 92% accuracy in identifying fraudulent transactions"
+        "Enabled warehouse personnel to view, update, and manage inventory counts, transitioning from a physical paper-based system to a digital mobile format",
+        "Implemented advanced functionalities including a dark mode UI, permission-based storage access, and an automated Excel (.xlsx) export system using Share Plus for seamless inventory data sharing",
+        "Included a list of orders for inventory that can be edited and filtered by batch to streamline the selection process of users"
       ]
     },
-    {
+  /*  {
       title: "Oral Cancer Detection",
       description: "Built a deep learning model to detect and classify oral cancer stages from medical images, helping in early diagnosis and treatment planning.",
       technologies: ["Python", "TensorFlow", "Neural Networks", "Computer Vision", "OpenCV"],

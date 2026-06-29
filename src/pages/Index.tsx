@@ -12,15 +12,15 @@ const Index = () => {
   }, []);
 
   const featuredProjects = [
-   /* {
-      title: "Income Tax Fraud Detection",
-      description: "A system to detect fraudulent activities in income tax filings using AI and machine learning.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-      tags: ["Python", "Machine Learning", "AI"],
-      link: "/projects",
-      code: "https://github.com/oxBinaryBrain/An_Income_Tax_Fraud_Detection_Using_AI-ML"
-    },
     {
+      title: "Warehouse Inventory",
+      description: "A cross-platform Flutter application for managing warehouse inventory across multiple branches. Built with Drift for local offline storage, featuring role-based authentication, batch data operations via Excel/CSV, and real-time dashboard analytics.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      tags: ["Flutter", "Dart", "Drift", "bcrypt", "file picker", "share plus", "permission handler"],
+      link: "/projects",
+      code: "https://appetize.io/app/b_b7htgjbrj7xz4djo67u363wzbm"
+    },
+   /* {
       title: "Oral Cancer Classification using Neural Networks",
       description: "Machine learning model to detect and classify oral cancer levels from images.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
@@ -269,7 +269,7 @@ const Index = () => {
                       rel="noopener noreferrer"
                     >
                       <Github className="mr-1.5 h-4 w-4" />
-                      Source Code
+                      View
                     </a>
                   </div>
                 </div>
