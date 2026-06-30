@@ -255,13 +255,13 @@ const Index = () => {
                     ))}
                   </div>
                   <div className="flex justify-between">
-                      <Link
+                    {/*  <Link
                         to={project.link}
                         className="inline-flex items-center text-[#E0927B] hover:text-[#E0927B] transition-colors"
                       >
                       View Details
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
+                    </Link> */}
                     <a
                       href={project.code}
                       className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors"
