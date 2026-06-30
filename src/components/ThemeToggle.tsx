@@ -13,7 +13,7 @@ const ThemeToggle = () => {
       aria-label="Toggle theme"
       className="relative inline-flex items-center rounded-full p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-offset-2"
     >
-      <div className="relative flex items-center w-16 h-9 rounded-full border-2 border-[#D46A49] overflow-hidden">
+      <div className="relative flex items-center w-16 h-9 rounded-full border-2 border-[#D46A49] shadow-inner overflow-hidden">
         <motion.span
           className="absolute inset-y-0 left-0 w-1/2 flex items-center justify-center z-10"
           initial={false}
