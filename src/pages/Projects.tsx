@@ -44,17 +44,17 @@ const Projects = () => {
       tags: ["Flutter", "Dart", "Drift", "bcrypt", "file picker", "share plus", "permission handler"],
       code: "https://appetize.io/app/b_b7htgjbrj7xz4djo67u363wzbm",
       category: "mobile"
-    }
-   /*  {
-      id: 2,
-      title: "Oral Cancer Classification using Neural Networks",
-      description: "Developing a machine learning model to detect and classify oral cancer levels from images. It involves data collection, preprocessing, feature extraction, and model evaluation.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-      tags: ["Python", "TensorFlow", "Neural Networks"],
-      code: "https://github.com/oxBinaryBrain/Oral_Cancer_Classification",
-      category: "ai"
     },
-    {
+     {
+      id: 2,
+      title: "A Web-Based Project Monitoring System for Pest Control Services",
+      description: "The project is a web-based project monitoring system designed for MacJ Pest Control Services. Its primary goal is to digitize and automate the company's operations, replacing manual processes for scheduling, reporting, project monitoring, and chemical inventory management. The system enables office administrators and technicians to collaborate through real-time updates, automated scheduling, mobile reporting, and inventory tracking, resulting in faster and more accurate business operations.",
+      image: "/macjwebsite.png",
+      tags: ["PHP 7.4", "JavaScript","HTML", "CSS", "MySQL", "XAMPP", "Git & GitHub"],
+      code: "https://github.com/Nagareboshi09/PestControl-System",
+      category: "web"
+    },
+   /* {
       id: 3,
       title: "Credit Card Fraud Detection",
       description: "A simple machine learning model which analyzes whether a credit card transaction is fraudulent or not. The dataset is downloaded from Kaggle and processed for analysis.",

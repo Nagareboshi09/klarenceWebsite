@@ -64,19 +64,22 @@ const Resume = () => {
         "Included a list of orders for inventory that can be edited and filtered by batch to streamline the selection process of users"
       ]
     },
-  /*  {
-      title: "Oral Cancer Detection",
-      description: "Built a deep learning model to detect and classify oral cancer stages from medical images, helping in early diagnosis and treatment planning.",
-      technologies: ["Python", "TensorFlow", "Neural Networks", "Computer Vision", "OpenCV"],
-      duration: "05/2023 - 08/2023",
-      type: "2nd Year Project",
+   {
+      title: "A Web-Based Project Monitoring System for Pest Control Services",
+      description: "The project is a web-based project monitoring system designed for MacJ Pest Control Services. Its primary goal is to digitize and automate the company's operations, replacing manual processes for scheduling, reporting, project monitoring, and chemical inventory management. The system enables office administrators and technicians to collaborate through real-time updates, automated scheduling, mobile reporting, and inventory tracking, resulting in faster and more accurate business operations.",
+      technologies: ["PHP 7.4", "JavaScript","HTML", "CSS", "MySQL", "XAMPP", "Git & GitHub"],
+      duration: "09/2024 - 08/2025",
+      type: "4th Year Project",
       accomplishments: [
-        "Conducted data collection and preprocessing for oral cancer detection",
-        "Designed and implemented a machine learning model for image classification using CNNs",
-        "Achieved 89% accuracy in detecting early-stage oral cancer"
+        "Generates schedules based on technician assessments and client treatment frequency, reducing scheduling conflicts and delays.",
+        "Provides administrators with live updates on job progress, technician activities, chemical usage, and treatment status through a centralized dashboard.",
+        "Digitizes chemical records, recommends proper dosages, updates inventory automatically, and alerts administrators when stock is running low.",
+        "Automatically reminds administrators and clients of upcoming contract expirations.",
+        "Ensures technicians verify required tools and chemicals before leaving for service calls, improving operational consistency.",
+        "Allows technicians to submit reports, upload photos, and record chemical usage immediately after completing a job, minimizing reporting delays."
       ]
     },
-    {
+   /* {
       title: "Object Tracking using OpenCV",
       description: "Developed an object detection and tracking system using OpenCV and KCF Tracker that can identify and follow objects in video streams.",
       technologies: ["Python", "OpenCV", "Computer Vision", "AI"],
