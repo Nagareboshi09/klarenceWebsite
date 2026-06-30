@@ -84,7 +84,7 @@ const About = () => {
                   >Paul Klarence A. De Guzman</motion.span>, an Information Technology graduating student.
                 </p>
                 <p>
-                  I am a driven Information Technology graduate with a strong foundation in full-stack web and mobile development. Graduating with a GPA of 1.47, I pair technical discipline with a natural curiosity for emerging tech. 
+                  I am a driven Information Technology graduate with a strong foundation in full-stack web and mobile development. Graduating with a GPA of 1.46, I pair technical discipline with a natural curiosity for emerging tech. 
                 </p>
                 <p>
                   My hands-on experience ranges from designing web-based project monitoring systems to engineering digital, mobile-first inventory solutions for real-world warehouse environments.
